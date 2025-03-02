@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section with Logo -->
+<section class="relative bg-gradient-to-br from-primary-50 to-accent-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div class="text-center md:text-left space-y-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
+                    Natural Beauty, 
+                    <span class="text-primary-600">Pure Care</span>
+                </h1>
+                <p class="text-lg text-gray-600 max-w-xl">
+                    Discover our collection of natural skincare products that nourish your skin and respect the environment.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="{% url 'products:product_list' %}" 
+                       class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white 
+                              bg-primary-500 hover:bg-primary-600 rounded-xl 
+                              transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+                        <i class="fas fa-shopping-bag mr-2"></i>
+                        Shop Now
+                    </a>
+                    <a href="{% url 'core:about' %}" 
+                       class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-primary-600 
+                              bg-white hover:bg-primary-50 rounded-xl border-2 border-primary-500
+                              transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Learn More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Content with Large Logo -->
+            <div class="relative flex justify-center items-center">
+                <!-- Background Decorative Elements -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-[500px] h-[500px] bg-primary-100/30 rounded-full blur-3xl"></div>
+                    <div class="absolute w-[400px] h-[400px] bg-accent-100/30 rounded-full blur-3xl -translate-x-20 translate-y-20"></div>
+                </div>
+                
+                <!-- Logo Container -->
+                <div class="relative transform transition-all duration-500 hover:scale-105">
+                    <div class="relative w-80 h-80 md:w-96 md:h-96">
+                        <img src="{% static 'images/logo.png' %}" 
+                             alt="E-para Logo" 
+                             class="w-full h-full object-contain drop-shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decorative Bottom Wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+        <svg class="w-full h-12 md:h-20" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 24.9999C240 74.9999 480 74.9999 720 49.9999C960 24.9999 1200 24.9999 1440 49.9999V73.9999H0V24.9999Z" fill="white"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Featured Categories -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Our Categories</h2>
+            <p class="mt-4 text-lg text-gray-600">Explore our range of natural skincare products</p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Face Care -->
+            <div class="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <div class="aspect-w-1 aspect-h-1 bg-primary-50">
+                    <div class="p-6 flex items-center justify-center">
+                        <i class="fas fa-spa text-5xl text-primary-500 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900">Face Care</h3>
+                    <p class="mt-2 text-sm text-gray-600">Natural face care products</p>
+                </div>
+            </div>
+
+            <!-- Body Care -->
+            <div class="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <div class="aspect-w-1 aspect-h-1 bg-accent-50">
+                    <div class="p-6 flex items-center justify-center">
+                        <i class="fas fa-pump-soap text-5xl text-accent-500 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900">Body Care</h3>
+                    <p class="mt-2 text-sm text-gray-600">Luxurious body care essentials</p>
+                </div>
+            </div>
+
+            <!-- Hair Care -->
+            <div class="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <div class="aspect-w-1 aspect-h-1 bg-primary-50">
+                    <div class="p-6 flex items-center justify-center">
+                        <i class="fas fa-wind text-5xl text-primary-500 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900">Hair Care</h3>
+                    <p class="mt-2 text-sm text-gray-600">Natural hair care solutions</p>
+                </div>
+            </div>
+
+            <!-- Accessories -->
+            <div class="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <div class="aspect-w-1 aspect-h-1 bg-accent-50">
+                    <div class="p-6 flex items-center justify-center">
+                        <i class="fas fa-gem text-5xl text-accent-500 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900">Accessories</h3>
+                    <p class="mt-2 text-sm text-gray-600">Beauty tools & accessories</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Featured Products</h2>
+            <p class="mt-4 text-lg text-gray-600">Discover our most loved natural skincare products</p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product Cards -->
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="aspect-w-1 aspect-h-1 bg-gray-200">
+                    <i class="fas fa-spa text-5xl text-primary-500 flex items-center justify-center h-full"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900">Natural Face Cream</h3>
+                    <p class="mt-2 text-sm text-gray-600">Enriched with natural ingredients</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-lg font-bold text-primary-600">$24.99</span>
+                        <button class="px-4 py-2 text-sm text-white bg-primary-500 hover:bg-primary-600 rounded-xl">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="aspect-w-1 aspect-h-1 bg-gray-200">
+                    <i class="fas fa-pump-soap text-5xl text-accent-500 flex items-center justify-center h-full"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900">Organic Body Lotion</h3>
+                    <p class="mt-2 text-sm text-gray-600">24-hour hydration formula</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-lg font-bold text-primary-600">$19.99</span>
+                        <button class="px-4 py-2 text-sm text-white bg-primary-500 hover:bg-primary-600 rounded-xl">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="aspect-w-1 aspect-h-1 bg-gray-200">
+                    <i class="fas fa-wind text-5xl text-primary-500 flex items-center justify-center h-full"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900">Natural Hair Oil</h3>
+                    <p class="mt-2 text-sm text-gray-600">Nourishing hair treatment</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-lg font-bold text-primary-600">$29.99</span>
+                        <button class="px-4 py-2 text-sm text-white bg-primary-500 hover:bg-primary-600 rounded-xl">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="#" class="inline-flex items-center px-6 py-3 text-white bg-primary-500 hover:bg-primary-600 rounded-xl">
+                View All Products
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900">Why Choose E-para?</h2>
+            <p class="mt-4 text-lg text-gray-600">Experience the difference of natural skincare</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 text-primary-500 mb-6">
+                    <i class="fas fa-leaf text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">100% Natural</h3>
+                <p class="text-gray-600">Made with pure and natural ingredients</p>
+            </div>
+
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-100 text-accent-500 mb-6">
+                    <i class="fas fa-heart text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Cruelty Free</h3>
+                <p class="text-gray-600">Never tested on animals</p>
+            </div>
+
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 text-primary-500 mb-6">
+                    <i class="fas fa-recycle text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Eco-Friendly</h3>
+                <p class="text-gray-600">Sustainable packaging</p>
+            </div>
+
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-100 text-accent-500 mb-6">
+                    <i class="fas fa-certificate text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Certified Quality</h3>
+                <p class="text-gray-600">Dermatologically tested</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

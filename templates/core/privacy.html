@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-primary-50 to-accent-50 overflow-hidden py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Privacy <span class="text-primary-600">Policy</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Your privacy is important to us. Learn how we protect and manage your personal information.
+            </p>
+        </div>
+    </div>
+    <!-- Decorative Bottom Wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+        <svg class="w-full h-12 md:h-20" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 24.9999C240 74.9999 480 74.9999 720 49.9999C960 24.9999 1200 24.9999 1440 49.9999V73.9999H0V24.9999Z" fill="white"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Privacy Content -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Information Collection -->
+        <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 mb-8 border border-gray-100 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-primary-100/30 rounded-full blur-2xl group-hover:bg-primary-200/40 transition-all duration-500"></div>
+            <div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-accent-100/30 rounded-full blur-2xl group-hover:bg-accent-200/40 transition-all duration-500"></div>
+            
+            <div class="relative">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 text-primary-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-database text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Information We Collect</h2>
+                <div class="prose prose-lg text-gray-600">
+                    <p>We collect information that you provide directly to us, including name, email address, shipping address, and payment information when placing an order.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Usage -->
+        <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 mb-8 border border-gray-100 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 left-0 -mt-8 -ml-8 w-32 h-32 bg-primary-100/30 rounded-full blur-2xl group-hover:bg-primary-200/40 transition-all duration-500"></div>
+            <div class="absolute bottom-0 right-0 -mb-8 -mr-8 w-32 h-32 bg-accent-100/30 rounded-full blur-2xl group-hover:bg-accent-200/40 transition-all duration-500"></div>
+            
+            <div class="relative">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-100 text-accent-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-cogs text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">How We Use Your Information</h2>
+                <div class="prose prose-lg text-gray-600">
+                    <p>We use the information we collect to process your orders, send you marketing communications (with your consent), and improve our services.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Protection -->
+        <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 mb-8 border border-gray-100 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-primary-100/30 rounded-full blur-2xl group-hover:bg-primary-200/40 transition-all duration-500"></div>
+            <div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-accent-100/30 rounded-full blur-2xl group-hover:bg-accent-200/40 transition-all duration-500"></div>
+            
+            <div class="relative">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 text-primary-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-shield-alt text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">How We Protect Your Information</h2>
+                <div class="prose prose-lg text-gray-600">
+                    <p>We implement appropriate security measures to protect your personal information from unauthorized access, disclosure, or destruction.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cookie Policy -->
+        <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 mb-8 border border-gray-100 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 left-0 -mt-8 -ml-8 w-32 h-32 bg-primary-100/30 rounded-full blur-2xl group-hover:bg-primary-200/40 transition-all duration-500"></div>
+            <div class="absolute bottom-0 right-0 -mb-8 -mr-8 w-32 h-32 bg-accent-100/30 rounded-full blur-2xl group-hover:bg-accent-200/40 transition-all duration-500"></div>
+            
+            <div class="relative">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-100 text-accent-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-cookie-bite text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Cookie Policy</h2>
+                <div class="prose prose-lg text-gray-600">
+                    <p>We use cookies to enhance your browsing experience and analyze website traffic. You can control cookie settings through your browser preferences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Privacy Concerns?</h2>
+        <p class="text-lg text-gray-600 mb-8">If you have any questions about our privacy policy, we're here to help</p>
+        <a href="{% url 'core:contact' %}" 
+           class="inline-flex items-center px-6 py-3 text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+            <i class="fas fa-envelope mr-2"></i>
+            Contact Us
+        </a>
+    </div>
+</section>
+{% endblock %}

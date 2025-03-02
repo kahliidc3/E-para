@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-primary-50 to-accent-50 overflow-hidden py-20">
+    <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-50/90 to-accent-50/90"></div>
+    </div>
+
+    <!-- Registration Form Container -->
+    <div class="relative w-full max-w-2xl mx-auto px-4">
+        <div class="bg-white rounded-2xl shadow-xl p-8 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-primary-100/30 rounded-full blur-2xl"></div>
+            <div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-accent-100/30 rounded-full blur-2xl"></div>
+            
+            <!-- Form Content -->
+            <div class="relative">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900">Create Account</h2>
+                    <p class="text-gray-600 mt-2">Join our community today</p>
+                </div>
+
+                <form method="post" class="space-y-6">
+                    {% csrf_token %}
+                    
+                    {% if form.errors %}
+                        <div class="bg-red-50 text-red-500 px-4 py-3 rounded-xl text-sm">
+                            Please correct the errors below.
+                        </div>
+                    {% endif %}
+
+                    <!-- Account Information -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Account Information</h3>
+                        
+                        <!-- Username Field -->
+                        <div>
+                            <label for="{{ form.username.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                Username
+                            </label>
+                            {{ form.username }}
+                            {% if form.username.errors %}
+                                <p class="text-red-500 text-sm mt-1">{{ form.username.errors.0 }}</p>
+                            {% endif %}
+                        </div>
+
+                        <!-- Email Field -->
+                        <div>
+                            <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                Email
+                            </label>
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                                <p class="text-red-500 text-sm mt-1">{{ form.email.errors.0 }}</p>
+                            {% endif %}
+                        </div>
+
+                        <!-- Password Fields -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="{{ form.password1.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Password
+                                </label>
+                                {{ form.password1 }}
+                                {% if form.password1.errors %}
+                                    <p class="text-red-500 text-sm mt-1">{{ form.password1.errors.0 }}</p>
+                                {% endif %}
+                            </div>
+                            <div>
+                                <label for="{{ form.password2.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Confirm Password
+                                </label>
+                                {{ form.password2 }}
+                                {% if form.password2.errors %}
+                                    <p class="text-red-500 text-sm mt-1">{{ form.password2.errors.0 }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address Information -->
+                    <div class="space-y-6 pt-6 border-t border-gray-200">
+                        <h3 class="text-xl font-semibold text-gray-900">Address Information</h3>
+                        
+                        <!-- Street Address -->
+                        <div>
+                            <label for="{{ address_form.street_address.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                Street Address
+                            </label>
+                            {{ address_form.street_address }}
+                            {% if address_form.street_address.errors %}
+                                <p class="text-red-500 text-sm mt-1">{{ address_form.street_address.errors.0 }}</p>
+                            {% endif %}
+                        </div>
+
+                        <!-- City, State, Postal Code -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div>
+                                <label for="{{ address_form.city.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                    City
+                                </label>
+                                {{ address_form.city }}
+                            </div>
+                            <div>
+                                <label for="{{ address_form.state.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                    State
+                                </label>
+                                {{ address_form.state }}
+                            </div>
+                            <div>
+                                <label for="{{ address_form.postal_code.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Postal Code
+                                </label>
+                                {{ address_form.postal_code }}
+                            </div>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label for="{{ address_form.phone_number.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                Phone Number
+                            </label>
+                            {{ address_form.phone_number }}
+                        </div>
+
+                        <!-- Additional Address Info -->
+                        <div>
+                            <label for="{{ address_form.address.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">
+                                Additional Address Information
+                            </label>
+                            {{ address_form.address }}
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" 
+                            class="w-full bg-primary-500 text-white py-3 px-4 rounded-xl hover:bg-primary-600 transition-colors duration-300 flex items-center justify-center space-x-2">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Create Account</span>
+                    </button>
+
+                    <!-- Login Link -->
+                    <div class="text-center">
+                        <p class="text-gray-600">
+                            Already have an account? 
+                            <a href="{% url 'accounts:login' %}" class="text-primary-500 hover:text-primary-600 font-medium">
+                                Sign in
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Dashboard</h1>
+        
+        <div class="bg-white rounded-xl shadow-sm p-6">
+            <h2 class="text-xl font-semibold mb-4">Welcome, {{ user.get_full_name|default:user.username }}!</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Quick Links -->
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-lg font-medium mb-3">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="{% url 'users:profile' %}" class="text-primary-600 hover:text-primary-700">
+                                <i class="fas fa-user mr-2"></i> View Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'users:profile_edit' %}" class="text-primary-600 hover:text-primary-700">
+                                <i class="fas fa-edit mr-2"></i> Edit Profile
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Account Info -->
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-lg font-medium mb-3">Account Info</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><span class="font-medium">Email:</span> {{ user.email }}</li>
+                        <li><span class="font-medium">Member since:</span> {{ user.date_joined|date:"F j, Y" }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-primary-50 to-accent-50 overflow-hidden py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Contact <span class="text-primary-600">Us</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                We're here to help! Reach out to us with any questions or concerns
+            </p>
+        </div>
+    </div>
+    <!-- Decorative Bottom Wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+        <svg class="w-full h-12 md:h-20" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 24.9999C240 74.9999 480 74.9999 720 49.9999C960 24.9999 1200 24.9999 1440 49.9999V73.9999H0V24.9999Z" fill="white"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Contact Information -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-gray-100">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+                <form method="post" class="space-y-6">
+                    {% csrf_token %}
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <input type="text" id="subject" name="subject" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-300"></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="w-full px-6 py-3 text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="space-y-8">
+                <!-- Contact Cards -->
+                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
+                    <div class="flex items-start space-x-4">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 text-primary-500 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Visit Us</h3>
+                            <p class="text-gray-600">123 Nature Street, Green City, 12345</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
+                    <div class="flex items-start space-x-4">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent-100 text-accent-500 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Call Us</h3>
+                            <p class="text-gray-600">+1 (234) 567-8900</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
+                    <div class="flex items-start space-x-4">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 text-primary-500 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Email Us</h3>
+                            <p class="text-gray-600">contact@epara.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="pt-8">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="group">
+                            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-100 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="group">
+                            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-100 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="group">
+                            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-100 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="group">
+                            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-100 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="bg-gray-100 rounded-2xl overflow-hidden h-96">
+            <!-- Replace with your map implementation -->
+            <div class="w-full h-full flex items-center justify-center text-gray-500">
+                <i class="fas fa-map text-6xl"></i>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

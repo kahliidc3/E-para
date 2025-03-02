@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ product.name }} - E-para{% endblock %}
+
+{% block content %}
+<div class="bg-gray-50">
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-2">
+                <li>
+                    <a href="{% url 'core:home' %}" class="text-gray-500 hover:text-primary">Home</a>
+                </li>
+                <li>
+                    <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </li>
+                <li>
+                    <a href="{% url 'products:product_list' %}" class="text-gray-500 hover:text-primary">Products</a>
+                </li>
+                <li>
+                    <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </li>
+                <li>
+                    <span class="text-gray-700 font-medium">{{ product.name }}</span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Product Details -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16">
+            <!-- Product Image -->
+            <div class="aspect-w-1 aspect-h-1 rounded-2xl overflow-hidden bg-white">
+                {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-full object-cover">
+                {% else %}
+                <img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" class="w-full h-full object-cover">
+                {% endif %}
+            </div>
+
+            <!-- Product Info -->
+            <div class="mt-8 lg:mt-0">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {% if product.category %}
+                    <span class="px-3 py-1 rounded-full bg-primary-light text-primary-dark text-sm font-medium">
+                        {{ product.category.name }}
+                    </span>
+                    {% endif %}
+                    {% if product.skin_type %}
+                    <span class="px-3 py-1 rounded-full bg-accent-light text-accent-dark text-sm font-medium">
+                        {{ product.skin_type }}
+                    </span>
+                    {% endif %}
+                    {% if product.is_new %}
+                    <span class="px-3 py-1 rounded-full bg-accent text-white text-sm font-medium">
+                        New
+                    </span>
+                    {% endif %}
+                </div>
+
+                <h1 class="text-3xl font-bold text-gray-900">{{ product.name }}</h1>
+                <p class="mt-4 text-xl font-bold text-primary">{{ product.price }} MAD</p>
+                
+                <div class="mt-8 space-y-6">
+                    <!-- Description -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">Description</h3>
+                        <p class="mt-2 text-gray-600">{{ product.description }}</p>
+                    </div>
+
+                    <!-- Ingredients -->
+                    {% if product.ingredients %}
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">Ingredients</h3>
+                        <p class="mt-2 text-gray-600">{{ product.ingredients }}</p>
+                    </div>
+                    {% endif %}
+
+                    <!-- How to Use -->
+                    {% if product.how_to_use %}
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">How to Use</h3>
+                        <p class="mt-2 text-gray-600">{{ product.how_to_use }}</p>
+                    </div>
+                    {% endif %}
+
+                    <!-- Add to Cart Form -->
+                    <form method="post" action="{% url 'cart:cart_add' product.id %}" class="mt-6">
+                        {% csrf_token %}
+                        <div class="flex items-center gap-4">
+                            <input type="number" name="quantity" value="1" min="1" 
+                                   class="search-gradient w-20 px-3 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20">
+                            <button type="submit" class="btn-gradient">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    {% if related_products %}
+    <div class="border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Related Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {% for related_product in related_products %}
+                <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 p-6">
+                    <img src="{{ related_product.image.url }}" alt="{{ related_product.name }}" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ related_product.name }}</h3>
+                    <p class="text-gray-600 mb-4">{{ related_product.description|truncatewords:20 }}</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-bold text-primary">${{ related_product.price }}</span>
+                        <a href="{% url 'products:product_detail' related_product.slug %}" 
+                           class="btn-gradient">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

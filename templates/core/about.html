@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-primary-50 to-accent-50 overflow-hidden py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                About <span class="text-primary-600">E-para</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover our journey in bringing natural skincare solutions to you
+            </p>
+        </div>
+    </div>
+    <!-- Decorative Bottom Wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+        <svg class="w-full h-12 md:h-20" viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 24.9999C240 74.9999 480 74.9999 720 49.9999C960 24.9999 1200 24.9999 1440 49.9999V73.9999H0V24.9999Z" fill="white"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative flex justify-center">
+                <!-- Background Decorative Elements -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-[400px] h-[400px] bg-primary-100/30 rounded-full blur-3xl"></div>
+                    <div class="absolute w-[300px] h-[300px] bg-accent-100/30 rounded-full blur-3xl -translate-x-20 translate-y-20"></div>
+                </div>
+                
+                <!-- Logo Container -->
+                <div class="relative transform transition-all duration-500 hover:scale-105">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <img src="{% static 'images/logo.png' %}" 
+                             alt="E-para Logo" 
+                             class="w-full h-full object-contain drop-shadow-xl">
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-gray-900">Our Story</h2>
+                <p class="text-lg text-gray-600">
+                    E-para was born from a passion for natural skincare and a commitment to environmental sustainability. 
+                    Our journey began with a simple idea: to create effective skincare products that are good for both 
+                    your skin and the planet.
+                </p>
+                <p class="text-lg text-gray-600">
+                    Today, we continue to innovate and expand our range of natural skincare solutions, always staying 
+                    true to our core values of quality, sustainability, and customer satisfaction.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900">Our Values</h2>
+            <p class="mt-4 text-lg text-gray-600">The principles that guide everything we do</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Quality -->
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-8">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 text-primary-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-star text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Quality First</h3>
+                <p class="text-gray-600">We never compromise on the quality of our ingredients or products.</p>
+            </div>
+
+            <!-- Sustainability -->
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-8">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-100 text-accent-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-leaf text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Sustainability</h3>
+                <p class="text-gray-600">Every decision we make considers its impact on our planet.</p>
+            </div>
+
+            <!-- Innovation -->
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-8">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 text-primary-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-lightbulb text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Innovation</h3>
+                <p class="text-gray-600">We constantly research and develop new natural skincare solutions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900">Meet Our Team</h2>
+            <p class="mt-4 text-lg text-gray-600">The passionate people behind E-para</p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Team Member Card -->
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <div class="aspect-w-1 aspect-h-1 bg-gradient-to-br from-primary-50 to-accent-50 p-8">
+                    <div class="flex items-center justify-center h-full">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-user text-4xl text-primary-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900">Sarah Johnson</h3>
+                    <p class="text-primary-600 font-medium mt-1">Founder & CEO</p>
+                    <div class="mt-4 flex justify-center space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member Card -->
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <div class="aspect-w-1 aspect-h-1 bg-gradient-to-br from-primary-50 to-accent-50 p-8">
+                    <div class="flex items-center justify-center h-full">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-user text-4xl text-accent-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900">Michael Chen</h3>
+                    <p class="text-primary-600 font-medium mt-1">Product Development</p>
+                    <div class="mt-4 flex justify-center space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member Card -->
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <div class="aspect-w-1 aspect-h-1 bg-gradient-to-br from-primary-50 to-accent-50 p-8">
+                    <div class="flex items-center justify-center h-full">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-user text-4xl text-primary-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900">Emma Davis</h3>
+                    <p class="text-primary-600 font-medium mt-1">Quality Control</p>
+                    <div class="mt-4 flex justify-center space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member Card -->
+            <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-gray-100">
+                <div class="aspect-w-1 aspect-h-1 bg-gradient-to-br from-primary-50 to-accent-50 p-8">
+                    <div class="flex items-center justify-center h-full">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-user text-4xl text-accent-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-lg font-semibold text-gray-900">Alex Thompson</h3>
+                    <p class="text-primary-600 font-medium mt-1">Customer Relations</p>
+                    <div class="mt-4 flex justify-center space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
