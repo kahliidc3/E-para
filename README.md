@@ -1,81 +1,89 @@
-# E-Para - Online Pharmacy E-Commerce Platform
+# E-Para - Modern Pharmacy E-Commerce Platform
 
-E-Para is a modern e-commerce platform specifically designed for online pharmacy and healthcare products. Built with Django, it provides a secure and user-friendly interface for purchasing pharmaceutical and healthcare items.
+<p align="center">
+  <img src="staticfiles/images/logo.png" alt="E-Para Logo" width="200"/>
+</p>
+
+## 🏥 About E-Para
+
+E-Para is a sophisticated e-commerce platform built with Django, specifically designed for online pharmacies. It offers a secure, user-friendly interface for purchasing pharmaceutical and healthcare products.
+
+## ⚡ Quick Start
+
+```bash
+# Clone repository
+git clone https://github.com/kahliidc3/E-para.git
+cd E-para
+
+# Set up virtual environment (Windows)
+python -m venv venv
+.\venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set up environment
+copy .env.example .env
+
+# Run migrations
+python manage.py migrate
+
+# Start development server
+python manage.py runserver
+```
 
 ## 🌟 Key Features
 
-### User Management
+### 👤 User Management
 - Secure email-based authentication
-- Google social login integration
-- Custom user profiles with medical history
-- Address management for delivery
+- Google OAuth integration
+- Medical history profiles
+- Address management
 
-### Product Catalog
-- Categorized healthcare products
-- Prescription medicine section
-- Over-the-counter medications
-- Health and wellness products
-- Product search and filtering
-- Detailed product information
+### 💊 Product Catalog
+- Prescription medicines
+- OTC medications
+- Health & wellness products
+- Advanced search & filtering
 
-### Shopping Experience
-- Intuitive shopping cart
-- Real-time stock updates
-- Prescription upload capability
+### 🛒 Shopping Experience
+- Real-time cart updates
+- Prescription uploads
 - Multiple payment options
-- Order tracking system
+- Order tracking
 
-### Security & Compliance
+### 🔒 Security
 - SSL/TLS encryption
-- HIPAA compliance measures
-- Secure payment processing
-- Data privacy protection
+- HIPAA compliance
+- Secure payments
+- Data protection
 
-## 🛠️ Technical Stack
+## 🛠️ Tech Stack
 
-### Backend
-- Django 5.1
-- Python 3.x
-- SQLite3 (Development)
-- django-allauth for authentication
+- **Backend**: Django 5.1, Python 3.x
+- **Database**: SQLite3 (Development)
+- **Authentication**: django-allauth
+- **Frontend**: Tailwind CSS, Crispy Forms
+- **Tools**: Git, VS Code
 
-### Frontend
-- Tailwind CSS
-- Crispy Forms
-- Responsive design
-- Mobile-first approach
-
-### Development Tools
-- Git version control
-- VS Code
-- Python virtual environment
-
-
-## 🗂️ Project Structure
+## 📂 Project Structure
 
 ```
 E-Para/
-├── accounts/          # User authentication & profiles
-├── cart/             # Shopping cart functionality
-├── core/             # Core application features
-├── orders/           # Order processing & tracking
-├── products/         # Product catalog management
-├── static/           # Static assets (CSS, JS, images)
-│   ├── css/
-│   ├── js/
-│   └── images/
+├── accounts/          # Authentication & profiles
+├── cart/             # Shopping cart
+├── core/             # Core features
+├── orders/           # Order processing
+├── products/         # Product management
+├── static/           # Assets
 ├── templates/        # HTML templates
-├── media/           # User-uploaded content
-├── requirements.txt  # Project dependencies
-└── manage.py        # Django management script
+└── manage.py         # Django CLI
 ```
 
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env` file in the root directory:
+## ⚙️ Environment Setup
 
 ```python
+# .env configuration
 DJANGO_SECRET_KEY=your_secret_key
 DJANGO_DEBUG=True
 DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
@@ -84,7 +92,6 @@ EMAIL_PORT=587
 EMAIL_HOST_USER=your_email@gmail.com
 EMAIL_HOST_PASSWORD=your_app_password
 ```
-
 
 ## 📝 License
 
